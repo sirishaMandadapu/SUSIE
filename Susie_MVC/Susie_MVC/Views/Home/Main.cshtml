@@ -1,0 +1,64 @@
+﻿@using Susie_MVC.Models;
+
+<html>
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 30px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: #111111;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="text-align: start">
+            <ul>
+                <li>
+                    @Html.ActionLink("Home", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("UserDetails", "UserDetails")
+                </li>
+                <li>
+                    @Html.ActionLink("ChangePassword", "ChangePassword")
+                </li>
+                <li>
+                    @Html.ActionLink("BookUpload", "BookUpload")
+                </li>
+                <li>
+                    @Html.ActionLink("IndexSerach", "IndexSerach")
+                </li>
+                <li>
+                    @Html.ActionLink("WebService", "WebService")
+                </li>
+                <li>
+                    @Html.ActionLink("Logout", "Logout")
+                </li>
+            </ul>
+        </div>
+    </header>
+    @RenderSection("featured", required: false)
+    <section>
+        @RenderBody()
+    </section>
+</body>
+</html>
