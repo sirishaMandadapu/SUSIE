@@ -2,6 +2,10 @@
 <Schema Namespace="MVCModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="MVCEntities" p1:LazyLoadingEnabled="true">
     <EntitySet Name="profiles" EntityType="MVCModel.profile" />
+    <FunctionImport Name="SpInsert">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="profile">
     <Key>

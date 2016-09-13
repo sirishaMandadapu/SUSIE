@@ -16,6 +16,10 @@
           <Property Name="username" Type="nchar" MaxLength="30" />
           <Property Name="password" Type="nchar" MaxLength="20" />
         </EntityType>
+        <Function Name="SpInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="nchar" Mode="In" />
+          <Parameter Name="password" Type="nchar" Mode="In" />
+        </Function>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
@@ -23,6 +27,10 @@
       <Schema Namespace="MVCModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="MVCEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="profiles" EntityType="MVCModel.profile" />
+          <FunctionImport Name="SpInsert">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="profile">
           <Key>
@@ -47,6 +55,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SpInsert" FunctionName="MVCModel.Store.SpInsert" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

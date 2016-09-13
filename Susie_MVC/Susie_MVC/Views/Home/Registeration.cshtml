@@ -1,0 +1,88 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        h2 {
+            color: hotpink;
+            text-align: center;
+        }
+
+        table {
+            background-color: wheat;
+            border: 3px solid yellow;
+            border-radius: 10px;
+            padding-bottom: 50px;
+            padding-right: 80px;
+            color: blue;
+            width: 200px;
+            height: 100px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Search Using Services and Information Extraction</h2>
+    </div>
+    <div id="main">
+        <form id="form1" method="post">
+            <table border="0">
+                <tr>
+                    <td colspan="2">
+                        @Html.ActionLink("Back To Login", "Index")
+                    </td>
+                </tr>
+                <tr>
+                    <td>UserName </td>
+                    <td>
+                        <input type="Text" id="txtUserName" name="txtUserName" /></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="text" id="txtPassword" name="txtPassword" /></td>
+                </tr>
+                <tr>
+                    <td>Re-Enter Password</td>
+                    <td>
+                        <input type="text" id="txtRpassword" name="txtRpassword" /></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td>
+                        <input type="text" id="txtEmail" name="txtEmail" /></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>
+                        <input type="text" id="txtPhone" name="txtPhone" /></td>
+                </tr>
+                <tr>
+                    <td>Date Of Birth</td>
+                    <td>
+                        <input type="text" id="txtDob" name="txtDob" /></td>
+                </tr>
+                <tr>
+                    <td>Adress</td>
+                    <td>
+                        <input type="text" id="txtAddress" name="txtAdress" maxlength="1200" /></td>
+                </tr>
+                <tr>
+                    <td>
+                       <button id="btnClear" value="Clear" style="background-color:blue;height:20px;width:50px;" ></button>
+                    </td>
+                    <td>
+                        <input type="submit" value="Sign up" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+

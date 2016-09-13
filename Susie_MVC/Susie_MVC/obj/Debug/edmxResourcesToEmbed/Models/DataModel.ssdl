@@ -11,4 +11,8 @@
     <Property Name="username" Type="nchar" MaxLength="30" />
     <Property Name="password" Type="nchar" MaxLength="20" />
   </EntityType>
+  <Function Name="SpInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nchar" Mode="In" />
+    <Parameter Name="password" Type="nchar" Mode="In" />
+  </Function>
 </Schema>

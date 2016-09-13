@@ -12,6 +12,9 @@ namespace Susie_MVC.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class MVCEntities : DbContext
     {
@@ -26,5 +29,18 @@ namespace Susie_MVC.Models
         }
     
         public DbSet<profile> profiles { get; set; }
+    
+        public virtual int SpInsert(string username, string password)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SpInsert", usernameParameter, passwordParameter);
+        }
     }
 }

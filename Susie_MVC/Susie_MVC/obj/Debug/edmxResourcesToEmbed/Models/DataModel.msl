@@ -10,5 +10,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpInsert" FunctionName="MVCModel.Store.SpInsert" />
   </EntityContainerMapping>
 </Mapping>
